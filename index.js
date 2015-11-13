@@ -11,6 +11,9 @@ function customImporter (url, prev, done) {
     var baseFolderName = url.split(path.sep)[0];
 
     if (handledBaseFolderNames[baseFolderName]) {
+        if (!endsWith(url, '.scss')) {
+            url += '.scss';
+        }
         return findInParentDir(url, prev, done);
     }
 
@@ -22,10 +25,6 @@ function endsWith(str, suffix) {
 }
 
 function findInParentDir(relativePath, startingDirPath, done) {
-    if (!endsWith(relativePath, '.scss')) {
-        relativePath += '.scss';
-    }
-
     var dirToTry = path.join(startingDirPath, '..');
     var pathToTry = path.join(dirToTry, relativePath);
 
