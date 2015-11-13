@@ -1,0 +1,14 @@
+{
+  "name": "sass-import-path-resolver",
+  "version": "0.1.0",
+  "description": "Custom importer for node-sass to help resolve relative paths to node_modules and bower_components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "D2L Corporation",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+      "node-sass": ">= 2.0.0"
+  }
+}
