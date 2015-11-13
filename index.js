@@ -11,13 +11,10 @@ function customImporter (url, prev, done) {
     var baseFolderName = url.split(path.sep)[0];
 
     if (handledBaseFolderNames[baseFolderName]) {
-        if (!endsWith(url, '.scss')) {
-            url += '.scss';
-        }
-        findInParentDir(url, prev, done);
-    } else {
-        return sass.NULL;
+        return findInParentDir(url, prev, done);
     }
+
+    return sass.NULL;
 }
 
 function endsWith(str, suffix) {
@@ -25,6 +22,10 @@ function endsWith(str, suffix) {
 }
 
 function findInParentDir(relativePath, startingDirPath, done) {
+    if (!endsWith(relativePath, '.scss')) {
+        relativePath += '.scss';
+    }
+
     var dirToTry = path.join(startingDirPath, '..');
     var pathToTry = path.join(dirToTry, relativePath);
 
