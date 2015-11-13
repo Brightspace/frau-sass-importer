@@ -28,7 +28,7 @@ package.json
 
 {
 	"scripts": {
-		"build:css": "node-sass --importer sass-path-resolver ./src/app.scss > ./dist/app.css"
+		"build:css": "node-sass --importer ./node_modules/sass-path-resolver/ ./src/app.scss > ./dist/app.css"
 	}
 }
 ```
@@ -38,4 +38,4 @@ Contributions are welcome, please submit a pull request!
 
 ### Code Style
 
-This repository is configured with [EditorConfig](http://editorconfig.org) and [eslint](http://eslint.org/) rules and contributions should make use of them.
+This repository is configured with [EditorConfig](http://editorconfig.org) rules and contributions should make use of them.
