@@ -14,7 +14,7 @@ function customImporter (url, prev, done) {
         if (!endsWith(url, '.scss')) {
             url += '.scss';
         }
-        return findInParentDir(url, prev, done);
+        findInParentDir(url, prev, done);
     }
 
     return sass.NULL;
@@ -25,6 +25,7 @@ function endsWith(str, suffix) {
 }
 
 function findInParentDir(relativePath, startingDirPath, done) {
+    // For node modules we may want to try using require.resolve() here instead.
     var dirToTry = path.join(startingDirPath, '..');
     var pathToTry = path.join(dirToTry, relativePath);
 
