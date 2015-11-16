@@ -33,6 +33,13 @@ package.json
 }
 ```
 
+## Tests
+This project uses [mocha](https://mochajs.org/), [chai](http://chaijs.com/), and [sinon](http://sinonjs.org/) for unit testing. To run the tests:
+
+```shell
+npm test
+```
+
 ## Contributing
 Contributions are welcome, please submit a pull request!
 

@@ -28,17 +28,17 @@ function findInParentDir(relativePath, startingDirPath, done) {
     var dirToTry = path.join(startingDirPath, '..');
     var pathToTry = path.join(dirToTry, relativePath);
 
-    try {
-        fs.access(pathToTry, fs.R_OK, function(err) {
-            if (err) {
-                return findInParentDir(relativePath, dirToTry, done);
+    fs.access(pathToTry, fs.R_OK, function(err) {
+        if (err) {
+            if (pathToTry === ('/' + relativePath)) {
+                done(new Error('File not found: ' + relativePath));
             } else {
-                done({ file: pathToTry });
+                return findInParentDir(relativePath, dirToTry, done);
             }
-        });
-    } catch (e) {
-        return sass.NULL;
-    }
+        } else {
+            done({ file: pathToTry });
+        }
+    });
 }
 
 module.exports = customImporter;
