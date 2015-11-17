@@ -1,20 +1,26 @@
 {
-  "name": "sass-import-path-resolver",
+  "name": "frau-sass-importer",
   "version": "0.1.0",
-  "description": "Custom importer for node-sass to help resolve relative paths to node_modules and bower_components.",
+  "description": "Custom importer for node-sass to help resolve paths to node modules and bower components.",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha -R spec --recursive ./tests"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Brightspace/sass-import-path-resolver"
+    "url": "https://github.com/Brightspace/frau-sass-importer"
   },
+  "keywords": [
+    "d2l",
+    "frau",
+    "node-sass",
+    "sass"
+  ],
   "author": "D2L Corporation",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/Brightspace/sass-import-path-resolver",
+  "homepage": "https://github.com/Brightspace/frau-sass-importer",
   "bugs": {
-    "url": "https://github.com/Brightspace/sass-import-path-resolver/issues"
+    "url": "https://github.com/Brightspace/frau-sass-importer/issues"
   },
   "peerDependencies": {
     "node-sass": ">= 2.0.0"
