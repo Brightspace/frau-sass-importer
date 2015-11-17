@@ -2,7 +2,7 @@
 
 Custom importer for node-sass to help resolve relative paths to node modules and bower components.
 
-This importer will only operate on .scss file @import references that start with **node_modules** or **bower_components**. All other references will be ignored and left to be handled by some other custom importer or the regular sass path resolution process.
+This importer will attempt to resolve sass references using an npm module style agorithm. If the path can't be resolved and the reference starts with **node_modules** or **bower_components**, it will walk up the ancestor tree looking for the file. All other references will be ignored and left to be handled by some other custom importer or the regular sass path resolution process.
 
 ## Installation
 
