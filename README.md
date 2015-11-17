@@ -1,6 +1,6 @@
-# sass-import-path-resolver
+# frau-sass-importer
 
-Custom importer for node-sass to help resolve relative paths to node_modules and bower_components.
+Custom importer for node-sass to help resolve relative paths to node modules and bower components.
 
 This importer will only operate on .scss file @import references that start with **node_modules** or **bower_components**. All other references will be ignored and left to be handled by some other custom importer or the regular sass path resolution process.
 
@@ -9,7 +9,7 @@ This importer will only operate on .scss file @import references that start with
 Install via NPM:
 
 ```shell
-npm install sass-import-path-resolver
+npm install frau-sass-importer
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ package.json
 
 {
 	"scripts": {
-		"build:css": "node-sass --importer ./node_modules/sass-import-path-resolver/ ./src/app.scss > ./dist/app.css"
+		"build:css": "node-sass --importer ./node_modules/frau-sass-importer/ ./src/app.scss > ./dist/app.css"
 	}
 }
 ```
