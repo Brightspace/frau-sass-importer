@@ -1,6 +1,7 @@
 var sass = require('node-sass'),
     path = require('path'),
-    fs = require('fs');
+    fs = require('fs'),
+    resolve = require('resolve');
 
 var handledBaseFolderNames = {
     'bower_components': 'bower_components',
@@ -8,24 +9,40 @@ var handledBaseFolderNames = {
 };
 
 function customImporter (url, prev, done) {
+    if (!endsWith(url, '.scss')) {
+        url += '.scss';
+    }
+
+    try {
+        var resolvedNpmPath = resolveNpm(url, prev);
+        if (resolvedNpmPath) {
+            done({
+                file: resolvedNpmPath
+            });
+            return;
+        }
+    } catch (e) {}
+
     var baseFolderName = url.split(path.sep)[0];
 
     if (handledBaseFolderNames[baseFolderName]) {
-        if (!endsWith(url, '.scss')) {
-            url += '.scss';
-        }
         findInParentDir(url, prev, done);
+    } else {
+        return sass.NULL;
     }
-
-    return sass.NULL;
 }
 
 function endsWith(str, suffix) {
-    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+    return str && str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+function resolveNpm (id, referencingFile) {
+    return resolve.sync(id, {
+        basedir: path.dirname(referencingFile)
+    });
 }
 
 function findInParentDir(relativePath, startingDirPath, done) {
-    // For node modules we may want to try using require.resolve() here instead.
     var dirToTry = path.join(startingDirPath, '..');
     var pathToTry = path.join(dirToTry, relativePath);
 

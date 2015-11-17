@@ -6,15 +6,27 @@
   "scripts": {
     "test": "node_modules/.bin/mocha -R spec --recursive ./tests"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Brightspace/sass-import-path-resolver"
+  },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/Brightspace/sass-import-path-resolver",
+  "bugs": {
+    "url": "https://github.com/Brightspace/sass-import-path-resolver/issues"
+  },
   "peerDependencies": {
     "node-sass": ">= 2.0.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
     "mocha": "^2.3.3",
+    "mock-fs": "^3.4.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "resolve": "^1.1.6"
   }
 }

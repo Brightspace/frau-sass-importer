@@ -6,19 +6,21 @@ This importer will only operate on .scss file @import references that start with
 
 ## Installation
 
-Install NPM dependencies:
+Install via NPM:
 
 ```shell
-npm install
+npm install sass-import-path-resolver
 ```
 
 ## Usage
 
-1) In your .scss file @import statements, reference another .scss file from a dependent node module or bower component, but don't specify any relative path.
+1) In your .scss file @import statements, reference another .scss file from a dependent node module or bower component. Examples:
 
 ```scss
-@import 'bower_components/my_component/main.scss';
-@import 'node_modules/my_module/src/sub-module/some-widget.scss';
+@import 'my-module/src/main.scss';
+@import 'my-module/src/main';
+@import 'node_modules/my-module/src/widget/widget.scss';
+@import 'bower_components/my-component/main.scss';
 ```
 
 2) Add the custom importer to your node-sass build step.
@@ -28,7 +30,7 @@ package.json
 
 {
 	"scripts": {
-		"build:css": "node-sass --importer ./node_modules/sass-path-resolver/ ./src/app.scss > ./dist/app.css"
+		"build:css": "node-sass --importer ./node_modules/sass-import-path-resolver/ ./src/app.scss > ./dist/app.css"
 	}
 }
 ```
