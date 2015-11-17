@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- 4
+deploy:
+  provider: npm
+  email: d2ltravisdeploy@d2l.com
+  api_key:
+    secure: n8PAcoFmXWR6yLip1JjGYyEdwEPYFxaMCOiWXBh7PQZ3XYg5ed2Br72DlHdaFPYVl1Faszc3K3FePkR6XqYm1MBbYGp2yPb74SQiOE1l4CHusVPrJja5UOpH9fPcHzCnGbAvnYwtqvs1jhZLNTkDnnyA3hboLvpYtS2/GdYaj4HdoAwEsd2aO1pc4A0hunfE7bx2OwtXXa8UOabtjBnvB36RUAxIUDiT+dTHkZx9U9sLkuFGg+hzkp+G9KvbwfiaVwLAAP0IUb0DgR8M1bI25wUZr/LJbN4eq+ArymolPPVGRuJ0ZDHQk20bVidPx6VJ4IcIU8tgi4ogAq/dLQAY9p45cxd3fTnq/9Ld9/HjrZcf0ekditPYZ/ejkwGtYVIFUMRhEolfrlbfg45Ktt14O7WszKTRFDVb3RNfKxIHF7vG8hnIhP1yfvttXjD3UfQdGpPDn+PPFzXvUQK/Wa1vija39jEWg/8//2y2DoTUGnpCgx+X79gRkDvbFJknL5CEt0uL3aQ60nyQCqBA37QbpGCVUxscxvBEaJzhThHXoiaKC1xXeTOK2Oplop12+RLKx6edIJ1MoJ1roG6dnKIG3+eNbL63OjuqEX7YGdeGSNRKHn2lNhGVqjhBUt7mQ36/oYOtg5JJXhwXz4ts+C3JyFKFVU5rKeGHk7p5tmNoJ0A=
+  on:
+    tags: true
+    repo: Brightspace/frau-sass-importer
