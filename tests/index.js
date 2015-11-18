@@ -70,7 +70,7 @@ describe('Custom importer', function () {
 	});
 
 	describe('npm path resolution', function () {
-		beforeEach(function () {
+		afterEach(function () {
 			mockFs.restore();
 		});
 
