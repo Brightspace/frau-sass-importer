@@ -23,7 +23,7 @@ function customImporter (url, prev, done) {
         }
     } catch (e) {}
 
-    var baseFolderName = url.split(path.sep)[0];
+    var baseFolderName = url.split('/')[0];
 
     if (handledBaseFolderNames[baseFolderName]) {
         findInParentDir(url, prev, done);
