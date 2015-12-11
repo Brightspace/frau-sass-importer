@@ -16,20 +16,30 @@ function customImporter (url, prev, done) {
     try {
         var resolvedNpmPath = resolveNpm(url, prev);
         if (resolvedNpmPath) {
-            done({
-                file: resolvedNpmPath
-            });
-            return;
+            return complete({ file: resolvedNpmPath }, done);
         }
     } catch (e) {}
 
     var baseFolderName = url.split('/')[0];
 
     if (handledBaseFolderNames[baseFolderName]) {
-        findInParentDir(url, prev, done);
+        var result = findInParentDirSync(url, prev);
+        return complete(result, done);
     } else {
         return sass.NULL;
     }
+}
+
+function complete(result, done) {
+    if (isAsync(done)) {
+        done(result);
+        return;
+    }
+    return result;
+}
+
+function isAsync(doneCallback) {
+    return typeof doneCallback === 'function';
 }
 
 function endsWith(str, suffix) {
@@ -42,21 +52,22 @@ function resolveNpm (id, referencingFile) {
     });
 }
 
-function findInParentDir(relativePath, startingDirPath, done) {
+function findInParentDirSync(relativePath, startingDirPath) {
     var dirToTry = path.join(startingDirPath, '..');
     var pathToTry = path.join(dirToTry, relativePath);
 
-    fs.access(pathToTry, fs.R_OK, function(err) {
-        if (err) {
-            if (pathToTry === ('/' + relativePath)) {
-                done(new Error('File not found: ' + relativePath));
-            } else {
-                return findInParentDir(relativePath, dirToTry, done);
-            }
+    try {
+        fs.accessSync(pathToTry, fs.R_OK);
+        return {
+            file: pathToTry
+        };
+    } catch (err) {
+        if (pathToTry === ('/' + relativePath)) {
+            return new Error('File not found: ' + relativePath);
         } else {
-            done({ file: pathToTry });
+            return findInParentDirSync(relativePath, dirToTry);
         }
-    });
+    }
 }
 
 module.exports = customImporter;
