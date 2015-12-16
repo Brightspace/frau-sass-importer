@@ -18,7 +18,7 @@ describe('node-resolve-flattened', () => {
 		process.chdir(cwd);
 	});
 
-	it('should work', (done) => {
+	it('should work asynchronously', (done) => {
 		sass.render({
 			file: 'src/style.scss',
 			importer: frauImporter
@@ -29,5 +29,14 @@ describe('node-resolve-flattened', () => {
 
 			done();
 		});
+	});
+
+	it('should work synchronously', () => {
+		var res = sass.renderSync({
+			file: 'src/style.scss',
+			importer: frauImporter
+		});
+
+		expect(res.css.toString('utf8').replace(/\s/g, '')).to.equal('h1{color:#00eeee;}');
 	});
 });
