@@ -4,7 +4,9 @@
   "description": "Custom importer for node-sass to help resolve paths to node modules and bower components.",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha -R spec --recursive ./tests"
+    "check-style": "eslint .",
+    "unit": "mocha -R spec --recursive ./tests",
+    "test": "npm run check-style && npm run unit"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,8 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "eslint": "^1.10.3",
+    "eslint-config-brightspace": "^0.1.0",
     "mocha": "^2.3.3",
     "mock-fs": "^3.4.0",
     "node-sass": "^3.4.2",
