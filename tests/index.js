@@ -130,7 +130,7 @@ describe('Custom importer', function() {
 
 			beforeEach(function() {
 				sandbox = sinon.sandbox.create();
-				sandbox.stub(fs, 'accessSync', accessCheckHandler);
+				sandbox.stub(fs, 'accessSync').callsFake(accessCheckHandler);
 				resolvedPath = null;
 			});
 
@@ -298,7 +298,7 @@ describe('Custom importer', function() {
 
 			beforeEach(function() {
 				sandbox = sinon.sandbox.create();
-				sandbox.stub(fs, 'accessSync', accessCheckHandler);
+				sandbox.stub(fs, 'accessSync').callsFake(accessCheckHandler);
 				resolvedPath = null;
 			});
 
