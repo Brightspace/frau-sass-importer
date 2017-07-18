@@ -1,7 +1,6 @@
 'use strict';
 
-var sass = require('node-sass'),
-	path = require('path'),
+var path = require('path'),
 	fs = require('fs'),
 	resolve = require('resolve');
 
