@@ -3,6 +3,14 @@ node_js:
 - 4
 - 6
 - 8
+env:
+  - CXX=g++-5
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-5
 deploy:
   provider: npm
   email: d2ltravisdeploy@d2l.com
