@@ -27,7 +27,7 @@ function customImporter(url, prev, done) {
 		var result = findInParentDirSync(url, prev);
 		return complete(result, done);
 	} else {
-		return complete(url, done);
+		return null;
 	}
 }
 
