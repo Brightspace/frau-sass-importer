@@ -24,7 +24,7 @@ describe('Custom importer', function() {
 					expect.fail();
 				});
 
-				expect(result).to.equal(sass.NULL);
+				expect(result).to.equal(null);
 			});
 
 			it('should ignore relative path starting with an unhandled base folder name that cannot be resolved', function() {
@@ -35,7 +35,7 @@ describe('Custom importer', function() {
 					expect.fail();
 				});
 
-				expect(result).to.equal(sass.NULL);
+				expect(result).to.equal(null);
 			});
 
 			it('should ignore absolute path that canont be resolved', function() {
@@ -46,7 +46,7 @@ describe('Custom importer', function() {
 					expect.fail();
 				});
 
-				expect(result).to.equal(sass.NULL);
+				expect(result).to.equal(null);
 			});
 
 			it('should return an error when a node_modules path cannot be found', function(done) {
@@ -214,7 +214,7 @@ describe('Custom importer', function() {
 					prev = '/parent/file/parent.scss';
 
 				var result = importer(url, prev);
-				expect(result).to.equal(sass.NULL);
+				expect(result).to.equal(null);
 			});
 
 			it('should ignore relative path starting with an unhandled base folder name that cannot be resolved', function() {
@@ -222,7 +222,7 @@ describe('Custom importer', function() {
 					prev = '/parent/file/parent.scss';
 
 				var result = importer(url, prev);
-				expect(result).to.equal(sass.NULL);
+				expect(result).to.equal(null);
 			});
 
 			it('should ignore absolute path that canont be resolved', function() {
@@ -230,7 +230,7 @@ describe('Custom importer', function() {
 					prev = '/parent/file/parent.scss';
 
 				var result = importer(url, prev);
-				expect(result).to.equal(sass.NULL);
+				expect(result).to.equal(null);
 			});
 
 			it('should return an error when a node_modules path cannot be found', function() {
