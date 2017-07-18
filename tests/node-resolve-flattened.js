@@ -23,7 +23,7 @@ describe('node-resolve-flattened', () => {
 			file: 'src/style.scss',
 			importer: frauImporter
 		}, (err, res) => {
-			expect(err).to.not.be.defined;
+			expect(err).to.be.null;
 
 			expect(res.css.toString('utf8').replace(/\s/g, '')).to.equal('h1{color:#00eeee;}');
 
