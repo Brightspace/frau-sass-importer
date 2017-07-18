@@ -2,7 +2,6 @@
 
 var chai = require('chai'),
 	expect = chai.expect,
-	sass = require('node-sass'),
 	path = require('path'),
 	mockFs = require('mock-fs'),
 	fs = require('fs'),
