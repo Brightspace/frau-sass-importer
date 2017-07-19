@@ -19,3 +19,4 @@ deploy:
   on:
     tags: true
     repo: Brightspace/frau-sass-importer
+    node: 8
