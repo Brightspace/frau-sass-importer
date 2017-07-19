@@ -33,7 +33,7 @@
     "eslint-config-brightspace": "^0.3.1",
     "mocha": "^3.4.2",
     "mock-fs": "^4.4.1",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.5.3",
     "sinon": "^2.3.8",
     "sinon-chai": "^2.8.0"
   },
