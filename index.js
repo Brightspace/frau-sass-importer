@@ -1,7 +1,6 @@
 'use strict';
 
-var sass = require('node-sass'),
-	path = require('path'),
+var path = require('path'),
 	fs = require('fs'),
 	resolve = require('resolve');
 
@@ -28,7 +27,7 @@ function customImporter(url, prev, done) {
 		var result = findInParentDirSync(url, prev);
 		return complete(result, done);
 	} else {
-		return sass.NULL;
+		return null;
 	}
 }
 
