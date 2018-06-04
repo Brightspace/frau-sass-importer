@@ -138,6 +138,7 @@ describe('Custom importer', function() {
 			});
 
 			function accessCheckHandler(path) {
+				path = path.replace(/\\/g, '/');
 				if (path === resolvedPath) {
 					return path;
 				}
@@ -151,6 +152,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/node_modules/module/module.scss';
 
 				importer(url, prev, function(result) {
+					result.file = result.file.replace(/\\/g, '/');
 					expect(result).to.have.property('file', resolvedPath);
 					done();
 				});
@@ -163,6 +165,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/node_modules/module/module.scss';
 
 				importer(url, prev, function(result) {
+					result.file = result.file.replace(/\\/g, '/');
 					expect(result).to.have.property('file', resolvedPath);
 					done();
 				});
@@ -175,6 +178,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/node_modules/module/module.scss';
 
 				importer(url, prev, function(result) {
+					result.file = result.file.replace(/\\/g, '/');
 					expect(result).to.have.property('file', resolvedPath);
 					done();
 				});
@@ -187,6 +191,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/node_modules/module/module.scss';
 
 				importer(url, prev, function(result) {
+					result.file = result.file.replace(/\\/g, '/');
 					expect(result).to.have.property('file', resolvedPath);
 					done();
 				});
@@ -199,6 +204,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/bower_components/component/component.scss';
 
 				importer(url, prev, function(result) {
+					result.file = result.file.replace(/\\/g, '/');
 					expect(result).to.have.property('file', resolvedPath);
 					done();
 				});
@@ -306,6 +312,7 @@ describe('Custom importer', function() {
 			});
 
 			function accessCheckHandler(path) {
+				path = path.replace(/\\/g, '/');
 				if (path === resolvedPath) {
 					return path;
 				}
@@ -319,6 +326,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/node_modules/module/module.scss';
 
 				var result = importer(url, prev);
+				result.file = result.file.replace(/\\/g, '/');
 				expect(result).to.have.property('file', resolvedPath);
 			});
 
@@ -329,6 +337,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/node_modules/module/module.scss';
 
 				var result = importer(url, prev);
+				result.file = result.file.replace(/\\/g, '/');
 				expect(result).to.have.property('file', resolvedPath);
 			});
 
@@ -339,6 +348,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/node_modules/module/module.scss';
 
 				var result = importer(url, prev);
+				result.file = result.file.replace(/\\/g, '/');
 				expect(result).to.have.property('file', resolvedPath);
 			});
 
@@ -349,6 +359,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/node_modules/module/module.scss';
 
 				var result = importer(url, prev);
+				result.file = result.file.replace(/\\/g, '/');
 				expect(result).to.have.property('file', resolvedPath);
 			});
 
@@ -359,6 +370,7 @@ describe('Custom importer', function() {
 				resolvedPath = '/project-root/bower_components/component/component.scss';
 
 				var result = importer(url, prev);
+				result.file = result.file.replace(/\\/g, '/');
 				expect(result).to.have.property('file', resolvedPath);
 			});
 		});

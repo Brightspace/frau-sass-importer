@@ -63,7 +63,7 @@ function findInParentDirSync(relativePath, startingDirPath) {
 			file: pathToTry
 		};
 	} catch (err) {
-		if (pathToTry === ('/' + relativePath)) {
+		if (dirToTry === startingDirPath) {
 			return new Error('File not found: ' + relativePath);
 		} else {
 			return findInParentDirSync(relativePath, dirToTry);
