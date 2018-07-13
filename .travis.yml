@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-- 4
-- 6
-- 8
+  - 4
+  - 6
+  - 8
 env:
   - CXX=g++-5
 addons:
@@ -15,7 +15,8 @@ deploy:
   provider: npm
   email: d2ltravisdeploy@d2l.com
   api_key:
-    secure: gZuLDK8yr5USxSSZMp6qOGNqRpdiFEuf/Fc0fOtIyAgST2/PORHMIY+tKLfSDyq5UPy7jmJPEg+QB7dqcFOWFBDP4zbksmtUb8foL6f6Lt/9mDGbEMeuOag9d5MN/PS0/9dH7n+onfsXnsVsk15D2+rLaL6hf1ulcmUONtUwOr3v9LWgvBNO0mAmMxyb5Uviy5OBnCIG2mj3kHY1PqmGwrRDRDYXJlrRrebJIs+hMxfHqc+hyQ+SwLVH0BpmYBrWXR75G7+SzfS6g2SXLUIzNvUpjycAsTOOwr3esx+bGodZt+TdqjmpZPBJPbMq2rjJ3KpiZSdY53rZ8fvmNxE91mdLObmD0VX6sQ5Aiaty8wuFJvfBuRwFasEqtzIBYp8PWBZOsYy7y+Qh0+aXPyJIwunW1BhrVN+V3FJOPJdAOgCyNJC5+w++ktyclQQwpHtB+iW8Wz3oF12M0ier4PeKDX8UwZTUmqZQUrVy45THgSBEr0Nvtw52Rocpkurf/vCBYPZaqpTxldsMBGMkn9LgH8HbZLSlqdT6C8QqiuXZFRo1ieWnrRPEaCTAlrzOZykRzbpDyaw0CeNraxRmgyakiG0JsRhu405unztMLSFEgcyKeb8iey4ZD5dlJxyZg4vvCLOot21j77TJEXjTKY2MsLcaBTXsOpPWLAsEjCjTufg=
+    # d2l-travis-deploy: dc76......9627
+    secure: lcy3GJuYXECvZw1GZ2FDwP/V20XBzvYFivkVlZjBagu3jOdDb/zbTQBuQn6bWbemU+lRpqdbNijd+gjFagNP3tFR9nka+maZcXIxMf6eb49WD9T1SsPFNnqATGhCApYTWcK/YYehsyrDKRqb3JuCXA/OuKJj5laMggz916g5xD7kUg7gxuEDngAPzrEbftoKE2QYftI849abh40hAsAcVxsnYb6oUfvGhvk9z6xhhtYEhnId3+AMoeE8M8CFOrd1f/1P4zKSfWVsecM2pswSaj++hVwgUYnqQe4G1uLd+EmEiIOuOdmqk3ftr22UL4Ez8sW0hbS1KP/J7WUs8wS2frfSill5HAGhSVeTs+SWOM6/o/sfPSTaxn31aVsBBn0+oESYsPNAS+2MzbjoMJWTm0Y/2JhyOdl9Mn4NX6cgtYDyGAt0bWndsau1un1TxT6WD17qH9IinyD6chONtAPM+MRIiYa6dShCydj+tufcM7OEPK4/ySqjSbO5KziLhDvotXyP6EFrOZKFXXoB8i44JqiqviVN8Z2ioXwLNHNuwzUc+iIFvdoJV5Qv7MyZ3nW17r5ZHaXNwcGQSBGvj7g3ZV7UxdUt3tkeH9hcRtplyeOJGV3iZl0h4HC3+AqvGmWqJdCRKCvIF78ZFnjgKnlveHwbvbOPfiSUVss5/pExRnM=
   on:
     tags: true
     repo: Brightspace/frau-sass-importer
