@@ -4,3 +4,4 @@ dist
 coverage
 *.swo
 *.swp
+package-lock.json
