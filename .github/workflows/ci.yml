@@ -3,7 +3,7 @@ on: pull_request
 jobs:
   test:
     timeout-minutes: 5
-    runs-on: [self-hosted, Linux, AWS]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: Brightspace/third-party-actions@actions/checkout
