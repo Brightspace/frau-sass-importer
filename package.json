@@ -1,6 +1,6 @@
 {
   "name": "frau-sass-importer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Custom importer for node-sass to help resolve paths to node modules and bower components.",
   "main": "index.js",
   "scripts": {
